@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Template para criar um bucket S3 para a fase 1 do projeto de devops
+
+Parameters:
+  BucketName:
+    Type: String
+    Description: Nome do bucket S3
+    Default: projeto-devops
+
+Resources:
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref BucketName
+
+Outputs:
+  BucketNameOutput:
+    Description: Nome do bucket criado
+    Value: !Ref S3Bucket
